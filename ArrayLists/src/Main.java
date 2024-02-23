@@ -2,6 +2,7 @@ import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Comparator;
+import java.util.LinkedList;
 
 record GroceryItem(String name, String type, int count) {
 
@@ -76,5 +77,17 @@ public class Main {
         groceries.sort(Comparator.naturalOrder());
         System.out.println(groceries);
 
+
+    }
+
+    private static void testIterator(LinkedList<String> list) {
+
+        var iterator = list.iterator();
+        while (iterator.hasNext()) {
+//            System.out.println(iterator.next());
+            if (iterator.next().equals("Brisbane")) {
+                iterator.remove();
+            }
+        }
     }
 }
